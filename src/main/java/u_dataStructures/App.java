@@ -66,8 +66,7 @@ public class App
         System.out.println("____________Get __________");
         System.out.println("Primer elemento "+linkedList.get(0));
         System.out.println("Ultimo elemento "+linkedList.get(linkedList.size()-1));
-        System.out.println("Elemento -1 "+ linkedList.get(-1));
-        System.out.println(linkedList.get(linkedList.size()));
+        
 
         System.out.println("______________Delete _______");
         linkedList.delete(0);
@@ -82,6 +81,7 @@ public class App
         
         System.out.println("________Is empty _________");
         System.out.println(linkedList.isEmpty());
+        linkedList.get(linkedList.size()+1);
     }
     public static void testingSortedSet(){
         System.out.println("\n\n>>>>>>>>>>>>>>>>>>  Probando SortedSet >>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -104,9 +104,7 @@ public class App
         System.out.println("__________Get __________");
         System.out.println(sortedSet.get(0));
         System.out.println(sortedSet.get(sortedSet.size()-1));
-        System.out.println(sortedSet.get(-1));
-        System.out.println(sortedSet.get(sortedSet.size()));
-
+       
         System.out.println("_________Delete _______");
         sortedSet.delete(0);
         sortedSet.delete(9);
@@ -118,6 +116,8 @@ public class App
         
         System.out.println("__________Is empty _________");
         System.out.println(sortedSet.isEmpty());
+
+        sortedSet.get(sortedSet.size()+1);
         
     }
     public static void testignQueue(){
@@ -139,6 +139,7 @@ public class App
 
         //es mi caso, un mismo elemento no puede estar dos veces o mas en la misma fial
         queue.print();
+        System.out.println(queue.size());
 
         queue.getOut();
         queue.print();

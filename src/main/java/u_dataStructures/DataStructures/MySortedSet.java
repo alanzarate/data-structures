@@ -96,10 +96,10 @@ public class MySortedSet <T extends Comparable>{
                 index--;
             }
             aux = current.getData();
+            return aux;
         }else{
-            System.out.println("Hola te olvidaste que no puedes hacer eso tamaño = "+size);
+            throw new RuntimeException("Hola te olvidaste que no puedes hacer eso tamaño = "+size );
         }
-        return aux;
     }
     public void delete(int position){
         
