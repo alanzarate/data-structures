@@ -1,4 +1,4 @@
-package university.Interfaces;
+package u_dataStructures.Interfaces;
 
 public interface Comparable {
     /**
@@ -7,4 +7,5 @@ public interface Comparable {
      * @return 1 if both are equal, higher to 1 if this. is bigger and lower to 1 if other is bigger
      */
     double compareTo(Object object);
+    boolean hasNullAtributtes();
 }

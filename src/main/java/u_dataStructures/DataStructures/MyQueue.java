@@ -1,8 +1,9 @@
-package university.DataStructures;
+package u_dataStructures.DataStructures;
 
-import university.Nodes.MyGenericNode;
+import u_dataStructures.Interfaces.Comparable;
+import u_dataStructures.Nodes.MyGenericNode;
 
-public class MyQueue <T>{
+public class MyQueue <T extends Comparable>{
     private MyGenericNode<T> front;
     private MyGenericNode<T> back;
     private int size;
@@ -16,19 +17,22 @@ public class MyQueue <T>{
     }
     public void add(T dataIn){
         if(dataIn != null){
-            // if(IsInLine(dataIn))
-            MyGenericNode<T> newNode = new MyGenericNode<>(dataIn);
-            if(front == null){
-                front = back = newNode;
-            }else{
-                back.setNext(newNode);
-                back = newNode;
+            if(!dataIn.hasNullAtributtes()){
+                if(!isInLine(dataIn)){
+                    MyGenericNode<T> newNode = new MyGenericNode<>(dataIn);
+                    if(front == null){
+                        front = back = newNode;
+                    }else{
+                        back.setNext(newNode);
+                        back = newNode;
+                    }
+                    size++;
+                }
             }
-            size++;
         }
     }
 
-    public boolean isInLine(Object dataIn){
+    public boolean isInLine(T dataIn){
         boolean result = false;
         if(size>0){
             for(MyGenericNode<T> current = front;
@@ -63,6 +67,13 @@ public class MyQueue <T>{
         System.out.println(infoOut + " ]: ");
     }
     public T peekFront(){
-        return front.getData();
+        if(front != null){
+            return front.getData();
+        }else{
+            return null;
+        }
+    }
+    public boolean isEmpty(){
+        return size<=0;
     }
 }

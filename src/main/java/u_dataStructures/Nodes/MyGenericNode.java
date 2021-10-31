@@ -1,4 +1,4 @@
-package university.Nodes;
+package u_dataStructures.Nodes;
 
 public class MyGenericNode <D> {
     private D data;
